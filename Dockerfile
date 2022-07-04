@@ -2,7 +2,7 @@ FROM alpine:3.14
 
 ARG HELM_VERSION="v3.8.0"
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl git
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin
